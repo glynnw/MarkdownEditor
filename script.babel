@@ -1,0 +1,77 @@
+let MarkdownEditor = React.createClass({
+  handleMediaQuery: function(mql) {
+    if (mql.matches) {
+      this.setState({
+        showSplit: true
+      });
+    } else {
+      this.setState({
+        showSplit: false
+      });
+    }
+  },
+  getInitialState: function() {
+    let mediaQuery = window.matchMedia("(min-width: 600px)");
+    mediaQuery.addListener(this.handleMediaQuery);
+
+    return {
+      text: "Markdown Previewer\n--\n# Heading\n## Heading 2\n* list item 1\n\nList 2\n1. list item 1\n```\ncode\n```",
+      showMarkdown: true,
+      showSplit: window.innerWidth > 600
+    };
+  },
+  toggleViewer: function() {
+    this.setState({
+      showMarkdown: !this.state.showMarkdown
+    });
+  },
+  handleChange: function(event) {
+    this.setState({
+      text: event.target.value
+    });
+  },
+  convertMarkdown: function() {
+    return {
+      __html: marked(this.state.text)
+    };
+  },
+  render: function() {
+    let buttonText = this.state.showMarkdown ? "markdown" : "preview";
+    let showMarkdown = this.state.showMarkdown ? {
+      display: 'none'
+    } : {};
+    let showPreview = this.state.showMarkdown ? {} : {
+      display: 'none'
+    };
+    let showButton = this.state.showSplit ? {
+      display: 'none'
+    } : {};
+    if (this.state.showSplit) {
+      showPreview = {};
+      showMarkdown = {};
+    }
+
+    return (
+      <div className="markdownEditor">
+        <button className="toggle-button" onClick={this.toggleViewer} style={showButton}>Toggle {buttonText}</button>
+        <div className="cell" style={showMarkdown}>
+          <MarkdownInput onChange={this.handleChange} value={this.state.text} />
+        </div>
+        <div className="markdownPreviewer cell" dangerouslySetInnerHTML={this.convertMarkdown()} style={showPreview}>
+        </div>
+      </div>
+    )
+  }
+});
+
+let MarkdownInput = React.createClass({
+  render: function() {
+    return (
+      <div className="markdownInput">
+       <textarea value={this.props.value} onChange={this.props.onChange}/>
+     </div>
+    );
+  }
+});
+
+ReactDOM.render(<MarkdownEditor/>, document.getElementById("container"));

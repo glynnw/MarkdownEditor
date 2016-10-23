@@ -1,0 +1,70 @@
+$primary-font: 'Josefin Sans', sans-serif; $secondary-font: 'Playfair Display',
+serif;
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin maximize {
+  height: 100%;
+  width: 100%;
+}
+
+html, body {
+  @include maximize;
+  font-size: calc(1em + 1.3vmin);
+  font-family: $primary-font;
+}
+
+.markdownEditor {
+  @include maximize;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  button {
+    min-height: 2em;
+    flex: 1 1 8%;
+    align-self: center;
+  }
+  .cell {
+    flex: 1 1 92%;
+    padding: 0.5em;
+  }
+}
+
+textarea {
+  @include maximize;
+  overflow: scroll;
+  padding: 1em;
+}
+
+.markdownPreviewer {
+  @include maximize;
+  font-family: $secondary-font;
+  overflow: scroll;
+  padding: 1em;
+}
+
+.markdownInput {
+  @include maximize;
+  font-family: $primary-font;
+}
+
+#container {
+  @include maximize;
+}
+
+@media (min-width: 600px) {
+  .markdownEditor {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    @include maximize;
+  }
+  .cell {
+    @include maximize;
+    flex: 1 1 50%;
+  }
+}
