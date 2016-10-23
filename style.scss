@@ -1,6 +1,7 @@
-$primary-font: 'Josefin Sans', sans-serif; $secondary-font: 'Playfair Display',
+$primary-font: 'Josefin Sans',
+sans-serif;
+$secondary-font: 'Playfair Display',
 serif;
-
 * {
   box-sizing: border-box;
 }
@@ -10,7 +11,8 @@ serif;
   width: 100%;
 }
 
-html, body {
+html,
+body {
   @include maximize;
   font-size: calc(1em + 1.3vmin);
   font-family: $primary-font;
