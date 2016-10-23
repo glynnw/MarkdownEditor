@@ -32,12 +32,11 @@ html, body {
     flex: 1 1 92%;
     padding: 0.5em;
   }
-}
-
-textarea {
-  @include maximize;
-  overflow: scroll;
-  padding: 1em;
+  textarea {
+    @include maximize;
+    overflow: scroll;
+    padding: 1em;
+  }
 }
 
 .markdownPreviewer {
