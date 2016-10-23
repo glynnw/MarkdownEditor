@@ -37,15 +37,9 @@ let MarkdownEditor = React.createClass({
   },
   render: function() {
     let buttonText = this.state.showMarkdown ? "markdown" : "preview";
-    let showMarkdown = this.state.showMarkdown ? {
-      display: 'none'
-    } : {};
-    let showPreview = this.state.showMarkdown ? {} : {
-      display: 'none'
-    };
-    let showButton = this.state.showSplit ? {
-      display: 'none'
-    } : {};
+    let showMarkdown = this.state.showMarkdown ? {display: 'none'} : {};
+    let showPreview = this.state.showMarkdown ? {} : {display: 'none'};
+    let showButton = this.state.showSplit ? {display: 'none'} : {};
     if (this.state.showSplit) {
       showPreview = {};
       showMarkdown = {};
