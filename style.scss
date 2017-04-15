@@ -1,71 +1,78 @@
-$primary-font: 'Josefin Sans',
-sans-serif;
-$secondary-font: 'Playfair Display',
-serif;
 * {
   box-sizing: border-box;
+  color: black;
+  color: rgba(0,0,0,0.6);
 }
 
-@mixin maximize {
-  height: 100%;
-  width: 100%;
+html {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  color: rgba(0,0,0,0.6);
+  background-color: white;
 }
 
-html,
-body {
-  @include maximize;
-  font-size: calc(1em + 1.3vmin);
-  font-family: $primary-font;
+a:hover {
+  color: black;
+  color: rgba(0,0,0,0.8);
 }
 
-.markdownEditor {
-  @include maximize;
+.c-markdown-editor__menu__toggle-button {
+  max-height: 32px;
+  padding: 0.2em;
+  height: 1.5em;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  color: rgba(0,0,0,0.6);
+  border-radius: 4px;
+  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.c-markdown-editor {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: stretch;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  button {
-    min-height: 2em;
-    flex: 1 1 8%;
-    align-self: center;
-  }
-  .cell {
-    flex: 1 1 92%;
-    padding: 0.5em;
-  }
-  textarea {
-    @include maximize;
-    overflow: scroll;
-    padding: 1em;
+  height: 100vh;
+  @media (max-width: 599px) {
+    height: calc(100vh - 32px);
   }
 }
 
-.markdownPreviewer {
-  @include maximize;
-  font-family: $secondary-font;
-  overflow: scroll;
+.c-markdown-editor__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+}
+
+.c-markdown-editor__input {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  color: rgba(0,0,0,0.6);
   padding: 1em;
+  min-height: 100%;
+  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
-.markdownInput {
-  @include maximize;
-  font-family: $primary-font;
+.c-markdown-editor__previewer {
+  padding: 1em;
+  border: 1px solid black;
+  border: 1px solid rgba(0,0,0, 0.2);
+  border-left-style: none;
+  min-height: 100%;
+  overflow: auto;
 }
 
-#container {
-  @include maximize;
-}
-
-@media (min-width: 600px) {
-  .markdownEditor {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    @include maximize;
+.cell {
+  flex: 0 0 50%;
+  @media (max-width: 599px) {
+    flex: 0 0 100%;
   }
-  .cell {
-    @include maximize;
-    flex: 1 1 50%;
-  }
+}
+
+.full {
+  flex: 0 0 100%;
 }
