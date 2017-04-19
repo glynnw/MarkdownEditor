@@ -30,13 +30,13 @@ module.exports = {
     extractSass,
     new HtmlWebpackPlugin({template: './src/index.html'})
   ],
-  devServer: {
-    contentBase: path.join(__dirname, '.'),
-    historyApiFallback: true,
-    publicPath: "/dist/",
-    port: 8080
-  },
-  devtool: 'cheap-eval-source-map',
+  // devServer: {
+  //   contentBase: path.join(__dirname, '.'),
+  //   historyApiFallback: true,
+  //   publicPath: "/dist/",
+  //   port: 8080
+  // },
+  // devtool: 'cheap-eval-source-map',
   node: {
     fs: 'empty'
   }
