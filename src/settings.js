@@ -1,7 +1,7 @@
 //
 require('./assets/style.scss')
 const React = require('react')
-const DOMPurify = require('purify')
+const DOMPurify = require('dompurify')
 const ReactDOM = require('react-dom')
 const marked = require('marked')
 
