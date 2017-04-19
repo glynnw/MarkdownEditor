@@ -1,21 +1,18 @@
 * {
   box-sizing: border-box;
   color: black;
-  color: rgba(0,0,0,0.6);
-}
+  color: rgba(0, 0, 0, 0.6); }
 
 html {
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   color: black;
-  color: rgba(0,0,0,0.6);
-  background-color: white;
-}
+  color: rgba(0, 0, 0, 0.6);
+  background-color: white; }
 
 a:hover {
   color: black;
-  color: rgba(0,0,0,0.8);
-}
+  color: rgba(0, 0, 0, 0.8); }
 
 .c-markdown-editor__menu__toggle-button {
   max-height: 32px;
@@ -24,55 +21,48 @@ a:hover {
   text-decoration: none;
   background-color: white;
   color: black;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   border: 1px solid black;
-  border: 1px solid rgba(0,0,0,0.2);
-}
+  border: 1px solid rgba(0, 0, 0, 0.2); }
 
 .c-markdown-editor {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  height: 100vh;
+  height: 100vh; }
   @media (max-width: 599px) {
-    height: calc(100vh - 32px);
-  }
-}
+    .c-markdown-editor {
+      height: calc(100vh - 32px); } }
 
 .c-markdown-editor__menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 32px;
-}
+  height: 32px; }
 
 .c-markdown-editor__input {
   font-family: 'Roboto', sans-serif;
   color: black;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   padding: 1em;
   min-height: 100%;
   border: 1px solid black;
-  border: 1px solid rgba(0,0,0,0.2);
-}
+  border: 1px solid rgba(0, 0, 0, 0.2); }
 
 .c-markdown-editor__previewer {
   padding: 1em;
   border: 1px solid black;
-  border: 1px solid rgba(0,0,0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-left-style: none;
   min-height: 100%;
-  overflow: auto;
-}
+  overflow: auto; }
 
 .cell {
-  flex: 0 0 50%;
+  flex: 0 0 50%; }
   @media (max-width: 599px) {
-    flex: 0 0 100%;
-  }
-}
+    .cell {
+      flex: 0 0 100%; } }
 
 .full {
-  flex: 0 0 100%;
-}
+  flex: 0 0 100%; }
